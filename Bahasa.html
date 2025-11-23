@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<body><!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conditional Sentences Interaktif</title>
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  color:#222;
+}
+header{
+  background:#00796b;
+  color:white;
+  padding:20px;
+  text-align:center;
+  font-size:28px;
+  font-weight:bold;
+}
+.container{
+  width:90%;
+  max-width:1000px;
+  margin:auto;
+  padding:20px 0;
+}
+.card{
+  background:linear-gradient(135deg,#ffffff,#e0f2f1);
+  border-radius:15px;
+  padding:20px;
+  margin-bottom:20px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeInCard 1s forwards;
+}
+@keyframes fadeInCard{
+  to{opacity:1; transform: translateY(0);}
+}
+h2{
+  margin-top:0;
+  margin-bottom:10px;
+  font-size:22px;
+}
+p{
+  font-size:14px;
+  line-height:1.6;
+}
+.quiz-question{
+  font-weight:bold;
+  margin-bottom:10px;
+}
+button{
+  padding:8px 16px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  margin:4px;
+  font-size:14px;
+  transition:0.3s;
+}
+button:hover{
+  opacity:0.85;
+}
+.correct{
+  background:#2dd36f !important;
+  color:white;
+}
+.wrong{
+  background:#ff6b6b !important;
+  color:white;
+}
+/* Animasi teks */
+@keyframes textFade{
+  0%{opacity:0; transform:translateY(10px);}
+  100%{opacity:1; transform:translateY(0);}
+}
+.fade-text{
+  animation:textFade 1s;
+}
+.arti{
+  font-style: italic;
+  color:#555;
+}
+</style>
+</head>
+<body>
+<header>Belajar Conditional Sentences + Quiz Interaktif</header>
+<div class="container">
+
+  <!-- Zero Conditional -->
+  <div class="card">
+    <h2 class="fade-text">Zero Conditional</h2>
+    <p class="fade-text">Zero Conditional digunakan untuk menyatakan fakta umum, kebenaran ilmiah, atau kejadian yang selalu terjadi jika kondisi tertentu terpenuhi.</p>
+    <p class="fade-text"><b>Rumus:</b> If + Present Simple, Present Simple</p>
+    <p class="fade-text"><b>Contoh 1:</b> If you heat water, it boils.</p>
+    <p class="arti fade-text">Artinya: Jika kamu memanaskan air, air itu mendidih.</p>
+    <p class="fade-text"><b>Contoh 2:</b> If you drop an object, it falls.</p>
+    <p class="arti fade-text">Artinya: Jika kamu menjatuhkan suatu benda, benda itu jatuh.</p>
+  </div>
+
+  <!-- Type 1 -->
+  <div class="card">
+    <h2 class="fade-text">Type 1</h2>
+    <p class="fade-text">Type 1 digunakan untuk kemungkinan nyata di masa sekarang atau masa depan. Biasanya dipakai untuk prediksi atau janji yang mungkin terjadi.</p>
+    <p class="fade-text"><b>Rumus:</b> If + Present Simple, Will + Verb</p>
+    <p class="fade-text"><b>Contoh 1:</b> If it rains, I will stay home.</p>
+    <p class="arti fade-text">Artinya: Jika hujan, saya akan tetap di rumah.</p>
+    <p class="fade-text"><b>Contoh 2:</b> If I pass the exam, I will celebrate tonight.</p>
+    <p class="arti fade-text">Artinya: Jika saya lulus ujian, saya akan merayakannya malam ini.</p>
+  </div>
+
+  <!-- Type 2 -->
+  <div class="card">
+    <h2 class="fade-text">Type 2</h2>
+    <p class="fade-text">Type 2 digunakan untuk situasi pengandaian yang tidak nyata atau tidak mungkin terjadi saat ini atau di masa depan.</p>
+    <p class="fade-text"><b>Rumus:</b> If + Past Simple, Would + Verb</p>
+    <p class="fade-text"><b>Contoh 1:</b> If I had money, I would buy a car.</p>
+    <p class="arti fade-text">Artinya: Jika saya punya uang, saya akan membeli mobil.</p>
+    <p class="fade-text"><b>Contoh 2:</b> If I were taller, I would play basketball.</p>
+    <p class="arti fade-text">Artinya: Jika saya lebih tinggi, saya akan bermain basket.</p>
+  </div>
+
+  <!-- Type 3 -->
+  <div class="card">
+    <h2 class="fade-text">Type 3</h2>
+    <p class="fade-text">Type 3 digunakan untuk pengandaian di masa lalu, menyatakan sesuatu yang tidak terjadi dan akibatnya juga tidak terjadi.</p>
+    <p class="fade-text"><b>Rumus:</b> If + Past Perfect, Would have + Verb</p>
+    <p class="fade-text"><b>Contoh 1:</b> She would have finished the exam if she had had more time.</p>
+    <p class="arti fade-text">Artinya: Dia akan menyelesaikan ujian jika dia memiliki lebih banyak waktu.</p>
+    <p class="fade-text"><b>Contoh 2:</b> If I had studied harder, I would have passed the test.</p>
+    <p class="arti fade-text">Artinya: Jika saya belajar lebih giat, saya akan lulus ujian.</p>
+  </div>
+
+  <!-- Quiz -->
+  <div class="card">
+    <h2 class="fade-text">Quiz Conditional Sentences</h2>
+    <div id="quiz"></div>
+    <button id="startQuiz">Mulai Quiz</button>
+  </div>
+
+</div>
+
+<script>
+// ---------------- Quiz data ----------------
+const quizData=[
+  {q:'If water reaches 100°C, it ___.', c:['boils','will boil','boiled','would boil'], a:'boils'},
+  {q:'If I study hard, I ___ the exam.', c:['will pass','would pass','pass','passes'], a:'will pass'},
+  {q:'If I were rich, I ___ a car.', c:['will buy','would buy','buy','buys'], a:'would buy'},
+  {q:'She ___ the match if she had trained more.', c:['would win','would have won','wins','won'], a:'would have won'},
+  {q:'If you heat ice, it ___.', c:['melts','will melt','melted','would melt'], a:'melts'},
+  {q:'If they hurry, they ___ the bus.', c:['would catch','will catch','caught','have caught'], a:'will catch'},
+  {q:'If he had money, he ___ a house.', c:['would buy','will buy','buys','bought'], a:'would buy'},
+  {q:'If I had known, I ___ you earlier.', c:['told','would tell','would have told','will tell'], a:'would have told'},
+  {q:'If he ___ earlier, he will not be late.', c:['left','had left','leaves','leave'], a:'leaves'},
+  {q:'If she had slept well, she ___ the test.', c:['will pass','would pass','would have passed','passes'], a:'would have passed'}
+];
+
+// ---------------- State ----------------
+const quizEl=document.getElementById('quiz');
+const startBtn=document.getElementById('startQuiz');
+let cur=0;
+let utter=null;
+
+// ---------------- Speech function ----------------
+function speakText(text){
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  utter=new SpeechSynthesisUtterance(text);
+  utter.lang='id-ID';
+  utter.rate=0.9;
+  utter.pitch=1.0;
+  window.speechSynthesis.speak(utter);
+}
+
+// ---------------- Quiz functions ----------------
+startBtn.addEventListener('click', startQuiz);
+
+function startQuiz(){
+  startBtn.disabled=true;
+  cur=0;
+  quizEl.innerHTML='';
+  showQuestion();
+}
+
+function showQuestion(){
+  const q=quizData[cur];
+  const div=document.createElement('div');
+  div.className='quiz-item card';
+  div.innerHTML=`<p class="quiz-question">${cur+1}. ${q.q}</p>`;
+  q.c.forEach(opt=>{
+    const btn=document.createElement('button');
+    btn.innerText=opt;
+    btn.onclick=()=>checkAnswer(btn,q.a);
+    div.appendChild(btn);
+  });
+  quizEl.appendChild(div);
+
+  // Baca soal
+  speakText(`Pertanyaan ${cur+1}: ${q.q}`);
+}
+
+function checkAnswer(btn,answer){
+  const parent=btn.parentElement;
+  const buttons=parent.querySelectorAll('button');
+  buttons.forEach(b=>b.disabled=true);
+
+  if(btn.innerText===answer){
+    btn.classList.add('correct');
+    const res=document.createElement('p');
+    res.style.color='#2dd36f';
+    res.style.fontWeight='bold';
+    res.innerText='Jawaban benar!';
+    parent.appendChild(res);
+    speakText('Jawaban benar!');
+  }else{
+    btn.classList.add('wrong');
+    buttons.forEach(b=>{if(b.innerText===answer) b.classList.add('correct');});
+    const res=document.createElement('p');
+    res.style.color='#ff6b6b';
+    res.style.fontWeight='bold';
+    res.innerText='Jawaban salah!';
+    parent.appendChild(res);
+    speakText(`Jawaban salah. Jawaban yang benar: ${answer}`);
+  }
+
+  cur++;
+  if(cur<quizData.length){
+    setTimeout(showQuestion,1000);
+  }
+}
+</script>
+</body>
+</html>
